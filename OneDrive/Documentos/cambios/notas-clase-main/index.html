@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Archivos por Carpetas</title>
+    <style>
+        /* Estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .file-container {
+            width: 280px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .folder {
+            font-weight: bold;
+            color: #82aaff;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .file-item {
+            margin: 8px 0;
+        }
+
+        .file-link {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .file-link:hover {
+            background-color: #333333;
+            color: #82aaff;
+        }
+
+        .content-display {
+            width: 100%;
+            max-width: 700px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #d4d4d4;
+            font-size: 16px;
+            margin-top: 20px;
+            line-height: 1.6;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+
+        .content-display::before {
+            content: "📄 Contenido del archivo";
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #82aaff;
+            font-size: 18px;
+        }
+
+        .placeholder {
+            color: #666;
+            font-style: italic;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Explorador de Archivos</h1>
+    <div class="file-container">
+        <div class="folder">101</div>
+        <ul class="file-list">
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read01.md')">read01.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read02.md')">read02.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read03.md')">read03.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read04.md')">read04.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read05.md')">read05.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read06.md')">read06.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read07.md')">read07.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read08.md')">read08.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read09.md')">read09.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read10.md')">read10.md</a></li>
+            <li class="file-item"><a href="#" class="file-link" onclick="loadFileContent('101/read11.md')">read11.md</a></li>
+        </ul>
+    </div>
+
+    <div class="content-display" id="content-display">
+        <p class="placeholder">Selecciona un archivo para ver su contenido.</p>
+    </div>
+
+    <script>
+        function loadFileContent(filepath) {
+            fetch(filepath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error al cargar el archivo ${filepath}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('content-display').innerText = data;
+                })
+                .catch(error => {
+                    document.getElementById('content-display').innerText = `No se pudo cargar el contenido del archivo: ${filepath}`;
+                    console.error(error);
+                });
+        }
+    </script>
+</body>
+</html>
