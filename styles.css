@@ -1,106 +1,139 @@
-/* Colores modernos y oscuros */
-:root {
-    --primary-color: #540f15;
-    --secondary-color: #a8dadc;
-    --background-color: #1d3557;
-    --card-bg: #2a2a2a;
-    --button-hover-color: #d62828;
-    --text-color: #f1faee;
-}
+/* styles.css */
 
+/* General */
 body {
-    background-color: var(--background-color);
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--primary-color);
-    transition: top 0.3s;
-    position: sticky; /* Esto hace que la barra se quede pegada al top al hacer scroll */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar-brand {
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-/* Estilos personalizados para las tarjetas */
-.card {
-    border: none;
-    border-radius: 15px;
-    background-color: var(--card-bg);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-.card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.card-title {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://i0.wp.com/urbanroosters.news/wp-content/uploads/2024/11/DUKI-PRE-ESCUCHA-AMERI-1.jpg?resize=1200%2C1200&ssl=1'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* La imagen se mantiene fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #eee6e6; /* Texto general */
+    margin-top: 70px; /* Compensa el espacio ocupado por la navbar fija */
+  }
+  
+  
+  a {
+    color: #e7e9ec; /* Color de los enlaces */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Navbar */
+  #navbar {
+    background-color: #070c13; /* Fondo de la barra de navegación */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra debajo del navbar */
+  }
+  
+  .navbar-brand {
     font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-}
-
-.card-text {
-    color: var(--text-color);
-}
-
-/* Botones personalizados */
-.btn-primary {
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 30px;
-    padding: 0.5rem 1.5rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: var(--button-hover-color);
-}
-
-.shadow-sm {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--primary-color);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease, bottom 0.3s ease;  /* Añadimos transición para suavidad */
-}
-
-.navbar-brand {
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-/* Navbar para pantallas grandes (desktop) */
-@media (min-width: 768px) {
-    .navbar {
-        top: 0;  /* Mantener la barra en la parte superior */
-        bottom: auto;  /* Evita que se mueva al fondo en pantallas grandes */
+    color: #f1faee; /* Color del título del navbar */
+  }
+  
+  .navbar-brand:hover {
+    color: #a8dadc; /* Color al pasar el cursor sobre el título del navbar */
+  }
+  
+  .nav-link {
+    color: #f1faee; /* Color de los enlaces del navbar */
+  }
+  
+  .nav-link:hover {
+    color: #e63946; /* Color de los enlaces al pasar el cursor */
+  }
+  
+  /* Sección de Biografía */
+  #biografia h2 {
+    color: #d8dde4; /* Título de la sección de biografía */
+  }
+  
+  #biografia p {
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+  }
+  
+ /* Imagen en la sección de biografía */
+#biografia img {
+    max-width: 800%; /* La imagen no excederá el ancho del contenedor */
+    /*height: auto; /* Mantiene las proporciones originales */
+    border: 5px solid #a8dadc; /* Borde alrededor de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 10px; /* Espacio superior para separación */
+  }
+  
+  /* Sección de Noticias */
+  #noticias h2 {
+    color: #ff0000; /* Título de la sección de noticias */
+    margin-bottom: 20px;
+  }
+  
+  .list-group-item {
+    background-color: #efeff3; /* Fondo de cada noticia */
+    border: 1px solid #0e0f10; /* Borde de las noticias */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .list-group-item:hover {
+    background-color: #e9ecef; /* Fondo al pasar el cursor sobre la noticia */
+  }
+  
+  /* Redes Sociales */
+  #redes-sociales h2 {
+    color: #e1e6ee; /* Título de la sección de redes sociales */
+  }
+  
+  #redes-sociales .btn {
+    border-color: #ebecee; /* Borde de los botones */
+    color: #e2e5e8; /* Color del texto */
+  }
+  
+  #redes-sociales .btn:hover {
+    background-color: #a8dadc; /* Fondo al pasar el cursor */
+    color: #fff; /* Texto al pasar el cursor */
+  }
+  
+  /* Tarjetas de Álbumes */
+  .card {
+    border: none; /* Sin borde para las tarjetas */
+    background-color: #be1c1c; /* Fondo blanco para las tarjetas */
+    transition: transform 0.2s ease-in-out; /* Animación al pasar el cursor */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  }
+  
+  .card-title {
+    color: #141111; /* Color de los títulos de las tarjetas */
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    color: #dfe3e8; /* Color del texto descriptivo en las tarjetas */
+  }
+  
+  .card-img-top {
+    border-radius: 10px 10px 0 0; /* Bordes superiores redondeados */
+  }
+  
+  .btn-primary {
+    background-color: #1d3557; /* Fondo de los botones */
+    border-color: #1d3557; /* Borde de los botones */
+  }
+  
+  .btn-primary:hover {
+    background-color: #457b9d; /* Fondo al pasar el cursor */
+    border-color: #457b9d; /* Borde al pasar el cursor */
+  }
+  
+  @media (max-width: 768px) {
+    #biografia img {
+      border-radius: 0;
     }
-}
-
-/* Navbar para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-    .navbar {
-        bottom: 0;  /* Posición fija en la parte inferior en móviles */
-        top: auto;  /* Evita que se quede en la parte superior */
-    }
-}
+  }
+  
