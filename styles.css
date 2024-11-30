@@ -6,104 +6,101 @@
     --card-bg: #2a2a2a;
     --button-hover-color: #d62828;
     --text-color: #f1faee;
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-  }
-  
-  /* Navbar */
-  .navbar {
+}
+
+/* Navbar */
+.navbar {
     background-color: var(--primary-color);
-  }
-  
-  .navbar-brand {
+    transition: top 0.3s;
+    position: sticky; /* Esto hace que la barra se quede pegada al top al hacer scroll */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
     font-weight: 700;
     letter-spacing: 0.05em;
-  }
-  
-  /* Estilos personalizados para las tarjetas */
-  .card {
+}
+
+/* Estilos personalizados para las tarjetas */
+.card {
     border: none;
     border-radius: 15px;
     background-color: var(--card-bg);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  }
-  
-  .card-img-top {
+}
+
+.card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-  }
-  
-  .card-title {
+}
+
+.card-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--secondary-color);
-  }
-  
-  .card-text {
+}
+
+.card-text {
     color: var(--text-color);
-  }
-  
-  /* Botones personalizados */
-  .btn-primary {
+}
+
+/* Botones personalizados */
+.btn-primary {
     background-color: var(--primary-color);
     border: none;
     border-radius: 30px;
     padding: 0.5rem 1.5rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: var(--button-hover-color);
-  }
-  
-  .shadow-sm {
+}
+
+.shadow-sm {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-/* Ajustes generales */
+}
+
+/* Navbar */
 .navbar {
-    background-color: #800000; /* Color de fondo */
-  }
-  
-  /* Media Query para pantallas pequeñas (menos de 600 px) */
-  @media (max-width: 600px) {
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease, bottom 0.3s ease;  /* Añadimos transición para suavidad */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Navbar para pantallas grandes (desktop) */
+@media (min-width: 768px) {
     .navbar {
-      flex-direction: column; /* Cambia la dirección a columna */
-      align-items: flex-start; /* Alinea el contenido al inicio */
-      padding: 1rem;
+        top: 0;  /* Mantener la barra en la parte superior */
+        bottom: auto;  /* Evita que se mueva al fondo en pantallas grandes */
     }
-  
-    .navbar-collapse {
-      width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Navbar para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        bottom: 0;  /* Posición fija en la parte inferior en móviles */
+        top: auto;  /* Evita que se quede en la parte superior */
     }
-  
-    .nav-link {
-      padding: 0.5rem 1rem;
-      text-align: left; /* Alinea los enlaces a la izquierda */
-    }
-  
-    /* Ajuste para las tarjetas */
-    .card {
-      margin-bottom: 20px; /* Añade espacio entre las tarjetas */
-    }
-  
-    .card-img-top {
-      height: auto; /* Permite que las imágenes se redimensionen automáticamente */
-      width: 100%; /* Ocupa todo el ancho del contenedor */
-    }
-  
-    .card-title, .card-text {
-      text-align: center; /* Centra el texto */
-    }
-  }
-  
+}
