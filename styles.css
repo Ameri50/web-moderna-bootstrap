@@ -70,3 +70,40 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
+/* Ajustes generales */
+.navbar {
+    background-color: #800000; /* Color de fondo */
+  }
+  
+  /* Media Query para pantallas pequeñas (menos de 600 px) */
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column; /* Cambia la dirección a columna */
+      align-items: flex-start; /* Alinea el contenido al inicio */
+      padding: 1rem;
+    }
+  
+    .navbar-collapse {
+      width: 100%; /* Asegura que ocupe todo el ancho */
+    }
+  
+    .nav-link {
+      padding: 0.5rem 1rem;
+      text-align: left; /* Alinea los enlaces a la izquierda */
+    }
+  
+    /* Ajuste para las tarjetas */
+    .card {
+      margin-bottom: 20px; /* Añade espacio entre las tarjetas */
+    }
+  
+    .card-img-top {
+      height: auto; /* Permite que las imágenes se redimensionen automáticamente */
+      width: 100%; /* Ocupa todo el ancho del contenedor */
+    }
+  
+    .card-title, .card-text {
+      text-align: center; /* Centra el texto */
+    }
+  }
+  
